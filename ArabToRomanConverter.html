@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.20.0.css">
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.20.0.js"></script>
+</body>
+<script>
+    function arabToRoman(n) {
+        output = ""
+
+        const rules = {
+            "M" : 1000,
+            "CM" : 900,
+            "D" : 500,
+            "CD": 400,
+            "C" : 100,
+            "XC": 90,
+            "L" : 50,
+            "XL": 40,
+            "X" : 10,
+            "IX": 9,
+            "V" : 5,
+            "IV": 4,
+            "I" : 1
+
+        }
+
+        roman_rules = Object.keys(rules);
+
+        while (n > 0) {
+            for (let index = 0; index < roman_rules.length; index++) {
+                val = rules[roman_rules[index]];
+                if (n >= val) {
+                    output += roman_rules[index]
+                    n -= val
+                    break;
+                }
+
+            }
+        }
+
+        return output
+    }
+
+
+    QUnit.module('ArabToToman test', function () {
+        QUnit.test('nulla', function (assert) {
+            assert.equal(arabToRoman(0), '');
+        });
+
+        QUnit.test('egy', function (assert) {
+            assert.equal(arabToRoman(1), 'I');
+        });
+
+        QUnit.test('ketto', function (assert) {
+            assert.equal(arabToRoman(2), 'II');
+        });
+
+        QUnit.test('harom', function (assert) {
+            assert.equal(arabToRoman(3), 'III');
+        });
+
+        QUnit.test('negy', function (assert) {
+            assert.equal(arabToRoman(4), 'IV');
+        });
+
+        QUnit.test('ot', function (assert) {
+            assert.equal(arabToRoman(5), 'V');
+        });
+
+        QUnit.test('hat', function (assert) {
+            assert.equal(arabToRoman(6), 'VI');
+        });
+
+        QUnit.test('het', function (assert) {
+            assert.equal(arabToRoman(7), 'VII');
+        });
+
+        QUnit.test('nyolc', function (assert) {
+            assert.equal(arabToRoman(8), 'VIII');
+        });
+
+        QUnit.test('kilenc', function (assert) {
+            assert.equal(arabToRoman(9), 'IX');
+        });
+
+        QUnit.test('tiz', function (assert) {
+            assert.equal(arabToRoman(10), 'X');
+        });
+
+        QUnit.test('tizenegy', function (assert) {
+            assert.equal(arabToRoman(11), 'XI');
+        });
+
+        QUnit.test('tizenketto', function (assert) {
+            assert.equal(arabToRoman(12), 'XII');
+        });
+
+        QUnit.test('tizenhet', function (assert) {
+            assert.equal(arabToRoman(17), 'XVII');
+        });
+
+        QUnit.test('huszonkilenc', function (assert) {
+            assert.equal(arabToRoman(29), 'XXIX');
+        });
+
+        QUnit.test('negyvennyolc', function (assert) {
+            assert.equal(arabToRoman(48), 'XLVIII');
+        });
+
+        QUnit.test('otven', function (assert) {
+            assert.equal(arabToRoman(50), 'L');
+        });
+
+        QUnit.test('nyolcvannyolc', function (assert) {
+            assert.equal(arabToRoman(88), 'LXXXVIII');
+        });
+
+        QUnit.test('kilencvenot', function (assert) {
+            assert.equal(arabToRoman(95), 'XCV');
+        });
+
+        QUnit.test('szazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(158), 'CLVIII');
+        });
+
+        QUnit.test('ketszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(258), 'CCLVIII');
+        });
+
+        QUnit.test('haromszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(358), 'CCCLVIII');
+        });
+
+        QUnit.test('negyszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(458), 'CDLVIII');
+        });
+
+        QUnit.test('otszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(558), 'DLVIII');
+        });
+
+        QUnit.test('hatszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(658), 'DCLVIII');
+        });
+
+        QUnit.test('nyolcszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(858), 'DCCCLVIII');
+        });
+
+        QUnit.test('kilencszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(958), 'CMLVIII');
+        });
+
+        QUnit.test('ezer', function (assert) {
+            assert.equal(arabToRoman(1000), 'M');
+        });
+
+        QUnit.test('ezernyolcszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(1858), 'MDCCCLVIII');
+        });
+
+        QUnit.test('tizezernyolcszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(10858), 'MMMMMMMMMMDCCCLVIII');
+        });
+    });
+
+</script>
