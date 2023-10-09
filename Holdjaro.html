@@ -10,22 +10,44 @@
 </body>
 <script>
 
+    const position = [1, 1, N];
+
     function move(){
         
-        const arr1 = [0, 0, 0, 0, 0, 0, 0, 0];
-        const arr2 = [0, 0, 0, 0, 0, 0, 0, 0];
-        const arr3 = [0, 0, 0, 0, 0, 0, 0, 0];
-        const arr4 = [0, 0, 0, 0, 0, 0, 0, 0];
-        const arr5 = [0, 0, 0, 0, 0, 0, 0, 0];
-        const arr6 = [0, 0, 0, 0, 0, 0, 0, 0];
-        const arr7 = [0, 0, 0, 0, 0, 0, 0, 0];
-        const arr8 = [0, 0, 0, 0, 0, 0, 0, 0];
+        const arr1 = [0, 1, 0, 0, 0, 0, 0, 0];
+        const arr2 = [0, 0, 0, 1, 0, 0, 0, 0];
+        const arr3 = [0, 0, 1, 0, 1, 0, 0, 0];
+        const arr4 = [0, 0, 1, 0, 0, 0, 0, 0];
+        const arr5 = [0, 0, 1, 0, 0, 1, 0, 0];
+        const arr6 = [0, 0, 0, 1, 0, 1, 0, 0];
+        const arr7 = [1, 0, 0, 1, 0, 0, 0, 0];
+        const arr8 = [0, 1, 0, 0, 1, 0, 0, 0];
 
         const planet = [arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8];
 
-        const position = [1, 1, N];
+        
 
 
+    }
+
+    function turn(direction){
+        if(direction === 'r'){
+            if(position[2] === 'N'){
+                position[2] = 'E';
+            }
+
+            if(position[2] === 'E'){
+                position[2] = 'S';
+            }
+
+            if(position[2] === 'S'){
+                position[2] = 'W';
+            }
+
+            if(position[2] === 'W'){
+                position[2] = 'N';
+            }
+        }
     }
 
     QUnit.module('Holdjaro test', function () {
