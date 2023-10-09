@@ -10,9 +10,7 @@
 </body>
 <script>
 
-    const position = [1, 1, N];
-
-    function move(){
+    function movement(direction, move){
         
         const arr1 = [0, 1, 0, 0, 0, 0, 0, 0];
         const arr2 = [0, 0, 0, 1, 0, 0, 0, 0];
@@ -25,55 +23,72 @@
 
         const planet = [arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8];
 
-        
-
-
-    }
-
-    function turn(direction){
+        const position = [1, 1, 'N'];
 
         output ='';
-
+        
         if(direction === 'r'){
-            if(position[2] === 'N'){
-                position[2] = 'E';
-                output = position[2];
-            }
 
-            if(position[2] === 'E'){
-                position[2] = 'S';
-                output = position[2];
-            }
+            switch(position[2]){
+                case 'N':
+                    position[2] = 'E';
+                    output = position[2];
+                    break;
 
-            if(position[2] === 'S'){
-                position[2] = 'W';
-                output = position[2];
-            }
+                case 'E':
+                    position[2] = 'S';
+                    output = position[2];
+                    break;
 
-            if(position[2] === 'W'){
-                position[2] = 'N';
-                output = position[2];
+                case 'S':
+                    position[2] = 'W';
+                    output = position[2];
+                    break;
+
+                case 'W':
+                    position[2] = 'N';
+                    output = position[2];
+                    break;
             }
         }
-        
+
+        if(direction === 'l'){
+
+            switch(position[2]){
+                case 'N':
+                    position[2] = 'W';
+                    output = position[2];
+                    break;
+
+                case 'E':
+                    position[2] = 'N';
+                    output = position[2];
+                    break;
+
+                case 'S':
+                    position[2] = 'E';
+                    output = position[2];
+                    break;
+
+                case 'W':
+                    position[2] = 'S';
+                    output = position[2];
+                    break;
+            }
+        }
+
+        return output;
+
     }
 
     QUnit.module('Holdjaro test', function () {
-        
+
         QUnit.test('fordulas', function(assert){
-            assert.equal(turn('r'), 'N');
+            assert.equal(movement('r',''), 'E');
         });
 
         QUnit.test('fordulas', function(assert){
-            assert.equal(turn('r'), 'E');
-        });
-
-        QUnit.test('fordulas', function(assert){
-            assert.equal(turn('r'), 'S');
-        });
-
-        QUnit.test('fordulas', function(assert){
-            assert.equal(turn('r'), 'W');
+            assert.equal(movement('l',''), 'N');
         });
 
     });
