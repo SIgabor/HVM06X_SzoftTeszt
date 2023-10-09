@@ -14,6 +14,7 @@
 
         const rules = {
             
+            "L" : 50,
             "XL": 40,
             "X" : 10,
             "IX": 9,
@@ -104,6 +105,14 @@
 
         QUnit.test('negyvenhat', function (assert) {
             assert.equal(arabToRoman(46), 'XLVI');
+        });
+
+        QUnit.test('otven', function (assert) {
+            assert.equal(arabToRoman(50), 'L');
+        });
+
+        QUnit.test('hatvannegy', function (assert) {
+            assert.equal(arabToRoman(64), 'LXIV');
         });
 
     });
