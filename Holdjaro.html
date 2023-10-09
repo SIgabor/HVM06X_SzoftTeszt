@@ -31,28 +31,49 @@
     }
 
     function turn(direction){
+
+        output ='';
+
         if(direction === 'r'){
             if(position[2] === 'N'){
                 position[2] = 'E';
+                output = position[2];
             }
 
             if(position[2] === 'E'){
                 position[2] = 'S';
+                output = position[2];
             }
 
             if(position[2] === 'S'){
                 position[2] = 'W';
+                output = position[2];
             }
 
             if(position[2] === 'W'){
                 position[2] = 'N';
+                output = position[2];
             }
         }
+        
     }
 
     QUnit.module('Holdjaro test', function () {
-        QUnit.test('elore', function(assert){
-            assert.equal(move(f), (1, 1, N))
+        
+        QUnit.test('fordulas', function(assert){
+            assert.equal(turn('r'), 'N');
+        });
+
+        QUnit.test('fordulas', function(assert){
+            assert.equal(turn('r'), 'E');
+        });
+
+        QUnit.test('fordulas', function(assert){
+            assert.equal(turn('r'), 'S');
+        });
+
+        QUnit.test('fordulas', function(assert){
+            assert.equal(turn('r'), 'W');
         });
 
     });
