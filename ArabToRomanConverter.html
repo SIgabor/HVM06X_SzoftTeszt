@@ -14,6 +14,8 @@
 
         const rules = {
             
+            "M" : 1000,
+            "CM" : 900,
             "D" : 500,
             "CD": 400,
             "C" : 100,
@@ -133,6 +135,18 @@
 
         QUnit.test('otszazotvennyolc', function (assert) {
             assert.equal(arabToRoman(558), 'DLVIII');
+        });
+
+        QUnit.test('kilencszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(958), 'CMLVIII');
+        });
+
+        QUnit.test('ezer', function (assert) {
+            assert.equal(arabToRoman(1000), 'M');
+        });
+
+        QUnit.test('ezerhatszazotvennyolc', function (assert) {
+            assert.equal(arabToRoman(1658), 'MDCLVIII');
         });
 
     });
