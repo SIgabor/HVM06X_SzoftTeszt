@@ -14,6 +14,7 @@
 
         const rules = {
             
+            "XL": 40,
             "X" : 10,
             "IX": 9,
             "V" : 5,
@@ -80,7 +81,7 @@
         QUnit.test('kilenc', function (assert) {
             assert.equal(arabToRoman(9), 'IX');
         });
-        
+
         QUnit.test('tiz', function (assert) {
             assert.equal(arabToRoman(10), 'X');
         });
@@ -99,6 +100,10 @@
 
         QUnit.test('huszonkilenc', function (assert) {
             assert.equal(arabToRoman(29), 'XXIX');
+        });
+
+        QUnit.test('negyvenhat', function (assert) {
+            assert.equal(arabToRoman(46), 'XLVI');
         });
 
     });
