@@ -14,6 +14,7 @@
 
         const rules = {
             
+            "IX": 9,
             "V" : 5,
             "IV": 4,
             "I" : 1
@@ -58,7 +59,7 @@
         QUnit.test('negy', function (assert) {
             assert.equal(arabToRoman(4), 'IV');
         });
-        
+
         QUnit.test('ot', function (assert) {
             assert.equal(arabToRoman(5), 'V');
         });
@@ -73,6 +74,10 @@
 
         QUnit.test('nyolc', function (assert) {
             assert.equal(arabToRoman(8), 'VIII');
+        });
+        
+        QUnit.test('kilenc', function (assert) {
+            assert.equal(arabToRoman(9), 'IX');
         });
 
     });
