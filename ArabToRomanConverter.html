@@ -13,7 +13,7 @@
         output = ""
 
         const rules = {
-            
+            "IV": 4,
             "I" : 1
 
         }
@@ -52,6 +52,11 @@
         QUnit.test('harom', function (assert) {
             assert.equal(arabToRoman(3), 'III');
         });
+
+        QUnit.test('negy', function (assert) {
+            assert.equal(arabToRoman(4), 'IV');
+        });
+        
     });
 
 </script>
