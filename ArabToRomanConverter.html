@@ -13,6 +13,8 @@
         output = ""
 
         const rules = {
+            
+            "V" : 5,
             "IV": 4,
             "I" : 1
 
@@ -57,6 +59,22 @@
             assert.equal(arabToRoman(4), 'IV');
         });
         
+        QUnit.test('ot', function (assert) {
+            assert.equal(arabToRoman(5), 'V');
+        });
+
+        QUnit.test('hat', function (assert) {
+            assert.equal(arabToRoman(6), 'VI');
+        });
+
+        QUnit.test('het', function (assert) {
+            assert.equal(arabToRoman(7), 'VII');
+        });
+
+        QUnit.test('nyolc', function (assert) {
+            assert.equal(arabToRoman(8), 'VIII');
+        });
+
     });
 
 </script>
