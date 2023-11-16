@@ -25,29 +25,29 @@
 
         const position = [1, 1, 'N'];
 
-        output ='';
+        output_direction ='';
         
         if(direction === 'r'){
 
             switch(position[2]){
                 case 'N':
                     position[2] = 'E';
-                    output = position[2];
+                    output_direction = position[2];
                     break;
 
                 case 'E':
                     position[2] = 'S';
-                    output = position[2];
+                    output_direction = position[2];
                     break;
 
                 case 'S':
                     position[2] = 'W';
-                    output = position[2];
+                    output_direction = position[2];
                     break;
 
                 case 'W':
                     position[2] = 'N';
-                    output = position[2];
+                    output_direction = position[2];
                     break;
             }
         }
@@ -57,27 +57,27 @@
             switch(position[2]){
                 case 'N':
                     position[2] = 'W';
-                    output = position[2];
+                    output_direction = position[2];
                     break;
 
                 case 'E':
                     position[2] = 'N';
-                    output = position[2];
+                    output_direction = position[2];
                     break;
 
                 case 'S':
                     position[2] = 'E';
-                    output = position[2];
+                    output_direction = position[2];
                     break;
 
                 case 'W':
                     position[2] = 'S';
-                    output = position[2];
+                    output_direction = position[2];
                     break;
             }
         }
 
-        return output;
+        return output_direction;
 
     }
 
