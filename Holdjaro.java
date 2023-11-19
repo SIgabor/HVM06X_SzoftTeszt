@@ -22,5 +22,50 @@ public class Holdjaro {
     }
 
     
-   
+    public static char Turn(char direction) {
+
+        if (direction == 'r') {
+
+            switch (currentHeadning) {
+                case 'N':
+                    currentHeadning = 'E';
+                    break;
+
+                case 'E':
+                    currentHeadning = 'S';
+                    break;
+
+                case 'S':
+                    currentHeadning = 'W';
+                    break;
+
+                case 'W':
+                    currentHeadning = 'N';
+                    break;
+            }
+        }
+
+        if (direction == 'l') {
+
+            switch (currentHeadning) {
+                case 'N':
+                    currentHeadning = 'W';
+                    break;
+
+                case 'E':
+                    currentHeadning = 'N';
+                    break;
+
+                case 'S':
+                    currentHeadning = 'E';
+                    break;
+
+                case 'W':
+                    currentHeadning = 'S';
+                    break;
+            }
+        }
+        return currentHeadning;
+    }
 }
+
