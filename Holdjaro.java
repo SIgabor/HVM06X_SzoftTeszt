@@ -11,14 +11,14 @@ public class Holdjaro {
             { 0, 1, 0, 0, 0, 0, 0, 0 }
     };
 
-    private static int currentPosition[] = { 0, 0};
-    private static char currentHeadning  = 'S';
+    private static int currentPosition[] = { 3, 3};
+    private static char currentHeadning  = 'N';
     private static int previousPosition[];  // átmeneti pozíció tárolás, ha akadály van az új pozíción akkor visszaállítás
     private static char previousHeading;  // átmeneti heading tárolás, ha akadály van az új pozíción akkor visszaállítás
 
     public static void main(String args[]) {
 
-        Move('b');
+        Move('f');
         System.out.println(" " + currentHeadning + currentPosition[0] + currentPosition[1]);
 
         
